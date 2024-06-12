@@ -1,8 +1,8 @@
-function Triangulo() {
-  const numLinhas = parseInt(prompt("Número de linhas para o triângulo?"));
+function triangulo() {
+  const NumLinhas = parseInt(prompt("Número de linhas para o triângulo?"));
 
   let tri = "";
-  for (let i = 0; i < numLinhas; i++) {
+  for (let i = 0; i < NumLinhas; i++) {
     for (let j = 0; j <= i; j++) {
       tri += "#";
     }
@@ -11,7 +11,7 @@ function Triangulo() {
   console.log(tri);
 }
 
-function Xadrez() {
+function xadrez() {
   const NumLinhas = parseInt(prompt("Número de linhas para o xadrez?"));
   const NumColunas = parseInt(prompt("Número de colunas para o xadrez?"));
 
@@ -25,4 +25,11 @@ function Xadrez() {
     xad += "\n";
   }
   console.log(xad);
+}
+
+function palindromo() {
+  const Palavra = prompt("Palavra (ou frase) para checar se é palindromo").toLowerCase();
+
+  let palavraContrario = Palavra.split("").reverse().join("");
+  console.log(`${Palavra} ${Palavra === palavraContrario ? "é" : "não é"} um palíndromo.`);
 }
