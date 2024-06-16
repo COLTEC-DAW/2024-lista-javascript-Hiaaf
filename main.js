@@ -17,12 +17,11 @@ function xadrez() {
 
   let xad = "";
   for (let l = 0; l < NumLinhas; l++) {
-    if (l % 2 == 1)
-      xad += " ";
     for (let c = 0; c < NumColunas; c++) {
-      xad += "# ";
+      let space = l % 2 === 1 && c % 2 === 0 || l % 2 === 0 && c % 2 === 1;
+      xad += space ? ' ' : '#';
     }
-    xad += "\n";
+    xad += '\n'
   }
   console.log(xad);
 }
