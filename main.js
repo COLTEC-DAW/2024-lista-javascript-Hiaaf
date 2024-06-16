@@ -32,3 +32,22 @@ function palindromo() {
   let palavraContrario = Palavra.split("").reverse().join("");
   console.log(`${Palavra} ${Palavra === palavraContrario ? "é" : "não é"} um palíndromo.`);
 }
+
+function diferente() {
+  const NumLinhas = 100;
+
+  for (let i = 1; i <= NumLinhas; i++) {
+    if (i % 3 !== 0 && i % 5 !== 0) {
+      console.log(i);
+      continue;
+    }
+
+    let str = '';
+    if (i % 3 === 0)
+      str += "Fizz";
+    if (i % 5 === 0)
+      str += "Buzz";
+
+    console.log(str);
+  }
+}
