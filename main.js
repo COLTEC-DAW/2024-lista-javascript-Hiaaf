@@ -1,3 +1,6 @@
+//// JavaScript: Conceitos Básicos
+
+// Desenhando um triângulo
 function triangulo() {
   const NumLinhas = parseInt(prompt("Número de linhas para o triângulo?"));
 
@@ -11,6 +14,7 @@ function triangulo() {
   console.log(tri);
 }
 
+// Tabuleiro de Xadrez
 function xadrez() {
   const NumLinhas = parseInt(prompt("Número de linhas para o xadrez?"));
   const NumColunas = parseInt(prompt("Número de colunas para o xadrez?"));
@@ -26,6 +30,7 @@ function xadrez() {
   console.log(xad);
 }
 
+// Verificando Palíndromos
 function palindromo() {
   const Palavra = prompt("Palavra (ou frase) para checar se é palindromo").toLowerCase();
 
@@ -33,6 +38,7 @@ function palindromo() {
   console.log(`${Palavra} ${Palavra === palavraContrario ? "é" : "não é"} um palíndromo.`);
 }
 
+// Um programa diferente...
 function diferente() {
   const NumLinhas = 100;
 
@@ -49,5 +55,42 @@ function diferente() {
       str += "Buzz";
 
     console.log(str);
+  }
+}
+
+
+//// JavaScript: Objetos & Arrays
+
+// Mínimo e Máximo
+function minMax() {
+  function min(a, b) {
+    return a < b ? a : a > b ? b : null;
+  }
+
+  function max(a, b) {
+    return a > b ? a : a < b ? b : null;
+  }
+
+  let minOrMax = prompt("Quer usar a função min ou a max?").toLowerCase();
+  if (!"minmax".includes(minOrMax)) {
+    alert('Escreva "min" ou "max"');
+    return;
+  }
+
+  let a = parseInt(prompt("Passe o primeiro número"));
+  let b = parseInt(prompt("Passe o segundo número"));
+
+  if (minOrMax === "min") {
+    let result = min(a, b);
+    if (result === null)
+      alert("Os números são iguais");
+    else
+      alert(`${result} é menor`);
+  } else if (minOrMax === "max") {
+    let result = max(a, b);
+    if (result === null)
+      alert("Os números são iguais");
+    else
+      alert(`${result} é maior`);
   }
 }
