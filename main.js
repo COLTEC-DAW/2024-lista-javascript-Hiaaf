@@ -22,8 +22,7 @@ function xadrez() {
   let xad = "";
   for (let l = 0; l < NumLinhas; l++) {
     for (let c = 0; c < NumColunas; c++) {
-      let space = l % 2 === 1 && c % 2 === 0 || l % 2 === 0 && c % 2 === 1;
-      xad += space ? ' ' : '#';
+      xad += (l + c) % 2 === 1 ? ' ' : '#';
     }
     xad += '\n'
   }
