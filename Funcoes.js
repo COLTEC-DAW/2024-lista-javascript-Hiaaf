@@ -1,15 +1,15 @@
-//// JavaScript: Objetos & Arrays
+//// JavaScript: Funções
 
 // Mínimo e Máximo
+function min(a, b) {
+  return a < b ? a : a > b ? b : null;
+}
+
+function max(a, b) {
+  return a > b ? a : a < b ? b : null;
+}
+
 function minMax() {
-  function min(a, b) {
-    return a < b ? a : a > b ? b : null;
-  }
-
-  function max(a, b) {
-    return a > b ? a : a < b ? b : null;
-  }
-
   const minOrMax = prompt("Quer usar a função min ou a max?").toLowerCase();
   if (!"minmax".includes(minOrMax)) {
     alert('Escreva "min" ou "max"');
@@ -35,21 +35,21 @@ function minMax() {
 }
 
 // Recursividade
+function mod2(num) {
+  if (num < 2)
+    return num === 0;
+  return mod2(num - 2);
+}
+
+function mod(num, _mod) {
+  if (mod === 0) return true;
+
+  if (num < _mod) 
+    return num === 0;
+  return mod(num - _mod, _mod);
+}
+
 function recursividade() {
-  function mod2(num) {
-    if (num < 2)
-      return num === 0;
-    return mod2(num - 2);
-  }
-
-  function mod(num, _mod) {
-    if (mod === 0) return true;
-
-    if (num < _mod) 
-      return num === 0;
-    return mod(num - _mod, _mod);
-  }
-
   const num1 = parseInt(prompt("Informe um número positivo."));
   const num2 = parseInt(prompt("Informe um segundo número positivo."));
 
@@ -58,16 +58,16 @@ function recursividade() {
 }
 
 // Contando caracteres
-function contandoChars() {
-  function countChars(frase, c) {
-    let count = 0;
-    for (let i = 0; i < frase.length; i++) {
-      if (frase[i] === c)
-        count++;
-    }
-    return count;
+function countChars(frase, c) {
+  let count = 0;
+  for (let i = 0; i < frase.length; i++) {
+    if (frase[i] === c)
+      count++;
   }
+  return count;
+}
 
+function contandoChars() {
   const frase = prompt("Informe a frase.");
   const c = prompt("Informe o caracter a ser contado.");
   
