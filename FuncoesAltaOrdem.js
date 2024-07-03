@@ -59,9 +59,10 @@ function testCripto() {
   const cesar2 = createCesar(2);
   const cesarM2 = createCesar(-2);
 
-  console.log("Cesar 0 casas:", cripto("hiago", cesar0));
-  console.log("Cesar 2 casas:", cripto("hiago", cesar2));
-  console.log("Cesar -2 casas:", cripto("hiago", cesarM2));
+  const str = "hiago";
+  console.log("Cesar 0 casas:", cripto(str, cesar0));
+  console.log("Cesar 2 casas:", cripto(str, cesar2));
+  console.log("Cesar -2 casas:", cripto(str, cesarM2));
 }
 
 // Verificando um número
@@ -83,4 +84,32 @@ function testVerify() {
       return true;
     }));
   }
+}
+
+// Transformações em uma String
+function transforma(str, criterio) {
+  let strMudada = "";
+
+  for (let i = 0; i < str.length; i++) {
+    strMudada += criterio(str[i]);
+  }
+
+  return strMudada;
+}
+
+function testTransforma() {
+  const str = "hiago";
+
+  console.log("Caixa alta nas vogais:",
+    transforma(str.toLowerCase(), c => "aeiou".includes(c) ? c.toUpperCase() : c)
+  );
+  console.log("Caixa alta nas consoantes", 
+    transforma(str.toLowerCase(), c => "bcdfghjklmnpqrstvwxyz".includes(c) ? c.toUpperCase() : c)
+  );
+  console.log("Caixa baixa nas vogais",
+    transforma(str.toUpperCase(), c => "AEIOU".includes(c) ? c.toLowerCase() : c)
+  );
+  console.log("Caixa baixa nas consoantes",
+    transforma(str.toUpperCase(), c => "BCDFGHJKLMNPQRSTVWXYZ".includes(c) ? c.toLowerCase() : c)
+  );
 }
