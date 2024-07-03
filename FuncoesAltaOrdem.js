@@ -63,3 +63,24 @@ function testCripto() {
   console.log("Cesar 2 casas:", cripto("hiago", cesar2));
   console.log("Cesar -2 casas:", cripto("hiago", cesarM2));
 }
+
+// Verificando um número
+function verify(num, criterio) {
+  return criterio(num);
+}
+
+function testVerify() {
+  const maxNum = 10;
+
+  for (let num = 0; num <= maxNum; num++) {
+    console.log(num, "é par:", verify(num, n => n % 2 === 0));
+    console.log(num, "é ímpar:", verify(num, n => n % 2 === 1));
+    console.log(num, "é primo:", verify(num, n => {
+      if (num < 2) return false;
+      for (let i = 2; i <= n / 2; i++) {
+        if (n % i === 0) return false;
+      }
+      return true;
+    }));
+  }
+}
