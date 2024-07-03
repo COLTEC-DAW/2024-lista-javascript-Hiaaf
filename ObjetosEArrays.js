@@ -51,3 +51,39 @@ function list() {
   const arr = prompt("Inform os itens da array separados por vírgula espaço (, )").split(', ');
   console.log(toList(arr));
 }
+
+// DeepEquals
+function deepEquals(obj1, obj2) {
+  const obj1keys = Object.keys(obj1).sort();
+  const obj2keys = Object.keys(obj2).sort();
+
+  if (obj1keys.length !== obj2keys.length) return false;
+
+  for (let i = 0; i < obj1keys.length; i++) {
+    if (obj1keys[i] !== obj2keys[i]) return false;
+  }
+  return true;
+}
+
+function testDeepEquals() {
+  const obj1 = {
+    "nome": "nome",
+    "idade": 254,
+    "cpf": 12312312312
+  };
+
+  const obj2 = {
+    "carro": "sou um carro",
+    "bibi": "fom fom",
+    "quebrei": true
+  };
+
+  const obj3 = {
+    "nome": "sobrenome",
+    "idade": 2,
+    "cpf": 0
+  };
+
+  console.log(`deepEquals(obj1, obj2) -> ${deepEquals(obj1, obj2)}`);
+  console.log(`deepEquals(obj1, obj3) -> ${deepEquals(obj1, obj3)}`);
+}
